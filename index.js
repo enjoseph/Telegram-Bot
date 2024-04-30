@@ -35,4 +35,4 @@ bot.on("poll_answer", (poll) => {
 bot.on ('polling_error' , (poll) => { console.log(poll)})
 
 
-// cron.schedule("0 */1 * * *", () => ); // Her 30 saniyede bir (*/30)
+cron.schedule("0 */1 * * *", () => isDaily(bot) ) // Her 30 saniyede bir (*/30)
