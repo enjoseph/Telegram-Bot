@@ -2,12 +2,12 @@ const telegramBot = require("node-telegram-bot-api");
 const cron = require("node-cron");
 
 //Module imports
-const welcomeModule = require("./Welcome/welcome.js");
-const setGroupModule = require("./sendQuiz/setGroup.js");
-const isDaily = require("./sendQuiz/isDaily.js");
-const checkAnswerModule = require("./sendQuiz/answerChecker.js");
+const welcomeModule = require("./src/Welcome/welcome.js");
+const setGroupModule = require("./src/sendQuiz/setGroup.js");
+const isDaily = require("./src/sendQuiz/isDaily.js");
+const checkAnswerModule = require("./src/sendQuiz/answerChecker.js");
 
-const token = "6916722084:AAEPzKy4tac6sV11fd4Rs0VTI7DrahdIA3k";
+const token = "6830036566:AAFuwdwCmmfuUChYIND9JP3NzWcYB1b0qIw";
 
 const bot = new telegramBot(token, { polling: true });
 
@@ -20,8 +20,8 @@ bot.onText(/\/start/, (msg) => {
 bot.onText(/\/quizstart (.+)/, (msg, match) => {
   const chat = msg.chat;
   const chatID = msg.chat.id;
-  setGroupModule(chat, match[1]); // butun idleri data base yazir
   console.log("Run quiz start");
+  setGroupModule(chat, match[1]); // butun idleri data base yazir
   isDaily(bot);
 });
 
@@ -33,7 +33,7 @@ bot.on("poll_answer", (poll) => {
   checkAnswerModule(bot, userOption , user , pollID);
 });
 
-bot.on ('polling_error' , (poll) => { console.log(poll)})
+// bot.on ('polling_error' , (poll) => { console.log(poll)})
 
 
-cron.schedule("0 */1 * * *", () => isDaily(bot) ) // Her 30 saniyede bir (*/30)
+// cron.schedule("0 */1 * * *", () => isDaily(bot) ) // Her 30 saniyede bir (*/30)
