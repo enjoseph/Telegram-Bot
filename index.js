@@ -3,9 +3,9 @@ const cron = require("node-cron");
 
 //Module imports
 const welcomeModule = require("./src/Welcome/welcome.js");
-const setGroupModule = require("./src/Quiz/setGroup.js");
-const isDaily = require("./src/Quiz/isDaily.js");
-const checkAnswerModule = require("./src/Quiz/answerChecker.js");
+const setGroupModule = require("./src/sendQuiz/setGroup.js");
+const isDaily = require("./src/sendQuiz/isDaily.js");
+const checkAnswerModule = require("./src/sendQuiz/answerChecker.js");
 
 const token = "6916722084:AAEPzKy4tac6sV11fd4Rs0VTI7DrahdIA3k";
 
