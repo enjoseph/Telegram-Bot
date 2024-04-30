@@ -33,7 +33,7 @@ bot.on("poll_answer", (poll) => {
   checkAnswerModule(bot, userOption , user , pollID);
 });
 
-// bot.on ('polling_error' , (poll) => { console.log(poll)})
+bot.on ('polling_error' , (poll) => { console.log(poll)})
 
 
-// cron.schedule("0 */1 * * *", () => isDaily(bot) ) // Her 30 saniyede bir (*/30)
+cron.schedule("0 */1 * * *", () => isDaily(bot) ) 
