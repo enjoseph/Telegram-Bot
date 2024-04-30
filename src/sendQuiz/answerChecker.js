@@ -26,7 +26,6 @@ const isFalseAnswer = async (bot, currentQuestion, userOption, user) => {
   const userID = user.id;
   const correctOption = currentQuestion.correctAnswerIndex;
   const explanation = currentQuestion.explanation
-console.log(explanation);
   if (correctOption !== userOption) {
     await bot.sendMessage(userID,`❌ Sorry, you gave the wrong answer. The correct answer was option ${indexToOption(correctOption)}.`);
     await bot.sendMessage(userID, explanation)
