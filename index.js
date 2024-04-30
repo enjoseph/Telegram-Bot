@@ -2,10 +2,10 @@ const telegramBot = require("node-telegram-bot-api");
 const cron = require("node-cron");
 
 //Module imports
-const welcomeModule = require("./Welcome/welcome.js");
-const setGroupModule = require("./sendQuiz/setGroup.js");
-const isDaily = require("./sendQuiz/isDaily.js");
-const checkAnswerModule = require("./sendQuiz/answerChecker.js");
+const welcomeModule = require("./src/Welcome/welcome.js");
+const setGroupModule = require("./src/sendQuiz/setGroup.js");
+const isDaily = require("./src/sendQuiz/isDaily.js");
+const checkAnswerModule = require("./src/sendQuiz/answerChecker.js");
 
 const token = "6830036566:AAFuwdwCmmfuUChYIND9JP3NzWcYB1b0qIw";
 
