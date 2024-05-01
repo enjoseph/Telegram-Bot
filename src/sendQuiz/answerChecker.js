@@ -1,8 +1,7 @@
 const questionsDB = require("../DataBase/questions.js");
 
 const correctAnswerMSG = "Congratulations🎉, you answered correctly✅";
-const wrongAnswerMSG =
-  "Sorry, you gave the wrong answer. The correct answer was option A.";
+
 
 const checkAnswer = (bot, userOption, user, pollID) => {
   const currentQuestion = questionsDB.find((question) => {

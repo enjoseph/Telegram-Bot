@@ -2,6 +2,7 @@ const questionGroup = require("../DataBase/group.js");
 const sendQuiz = require("./sendQuiz.js");
 
 const Daily = (bot) => {
+  console.log(questionGroup);
   console.log("Starting daily");
   const now = new Date();
   const hours = now.getHours();

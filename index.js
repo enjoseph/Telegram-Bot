@@ -22,12 +22,9 @@ bot.onText(/\/quizstart (.+)/, (msg, match) => {
   const chatID = msg.chat.id;
   console.log("Run quiz start");
 
-  // setGroup işlemi tamamlandıktan sonra isDaily fonksiyonunu çağıran bir geri çağırım fonksiyonu
-  const afterSetGroup = () => {
-    isDaily(bot);
-  };
+  setGroupModule(chat, match[1]); // butun idleri data base yazir
+  isDaily(bot);
 
-  setGroupModule(chat, match[1], afterSetGroup); // butun idleri data base yazir
 });
 
 bot.on("poll_answer", (poll) => {
