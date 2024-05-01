@@ -1,5 +1,6 @@
 const questionGroup = require("../DataBase/group.js");
 const setGroup = (chat , _daily) => {
+  console.log('setGroup run');
   const chatType = chat.type;
   const chatID = chat.id;
   const group = { isSend: false, id: chatID, groupType: chatType , daily: _daily};

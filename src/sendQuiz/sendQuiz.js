@@ -2,6 +2,9 @@ const questionsDB = require("../DataBase/questions.js");
 
 
 const sendQuiz = async (bot, chatID) => {
+
+  console.log("sendQuiz run" );
+
   const currentQuestion = selectQuestion();
 
   if (!currentQuestion) return;
