@@ -4,8 +4,10 @@ const sendQuiz = require("./sendQuiz.js");
 const Daily = (bot) => {
   console.log(questionGroup);
   console.log("Starting daily");
-  const now = new Date();
-  const hours = now.getHours();
+const userTimezoneOffset = (new Date()).getTimezoneOffset() / 60; // Saat cinsinden
+const now = new Date();
+const hours = new Date(now.getTime() + userTimezoneOffset * 60 * 60 * 1000);
+  console.log(hours);
   const daily = questionGroup.filter((item) => item.daily == hours);
   console.log(daily);
   if (daily.length === 0) {
