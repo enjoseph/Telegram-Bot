@@ -1,4 +1,4 @@
-const questionGroup = require("../Question/group.js");
+const questionGroup = require("../DataBase/group.js");
 const setGroup = (chat , _daily) => {
   console.log('setGroup run');
   const chatType = chat.type;
@@ -8,7 +8,7 @@ const setGroup = (chat , _daily) => {
   const isGroupExists = questionGroup.some(item => item.id === group.id);
 
   if ( (chatType === "group" || chatType === "supergroup") && isGroupExists === false) questionGroup.push(group);
-  
+  console.log(questionGroup);
 
 };
 

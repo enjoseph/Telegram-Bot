@@ -1,4 +1,4 @@
-const questionsDB = require("../Question/questions.js");
+const questionsDB = require("../DataBase/questions.js");
 
 const sendQuiz = async (bot, chatID) => {
   console.log("sendQuiz run");
