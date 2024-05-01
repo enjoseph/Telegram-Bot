@@ -6,6 +6,7 @@ const Daily = (bot) => {
   const hours = now.getHours();
   const daily = group.filter((item) => item.daily == hours);
   daily.forEach((item) => {
+  console.log(item);
     sendQuiz(bot, item.id);
   });
 };
