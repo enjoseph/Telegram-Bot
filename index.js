@@ -14,7 +14,7 @@ const bot = new telegramBot(token, { polling: true });
 bot.onText(/\/start/, (msg) => {
   const chatID = msg.chat.id;
   welcomeModule(bot, chatID);
-  console.log('run started');
+  console.log("run started");
 });
 
 bot.onText(/\/quizstart (.+)/, (msg, match) => {
@@ -30,10 +30,23 @@ bot.on("poll_answer", (poll) => {
   const user = poll.user;
   const pollID = poll.poll_id;
 
-  checkAnswerModule(bot, userOption , user , pollID);
+  checkAnswerModule(bot, userOption, user, pollID);
 });
 
-bot.on ('polling_error' , (poll) => { console.log(poll)})
+bot.on("polling_error", (poll) => {
+  console.log(poll);
+});
 
+cron.schedule("0 */1 * * *", () => isDaily(bot));
 
-cron.schedule("0 */1 * * *", () => isDaily(bot) ) 
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("elchinimanov bot");
+});
+
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT, () => console.log("Server is running on port 3000"));
+
