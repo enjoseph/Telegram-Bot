@@ -7,6 +7,7 @@ const Daily = (bot) => {
   const now = new Date();
   const hours = now.getHours();
   const daily = questionGroup.filter((item) => item.daily == hours);
+  console.log(daily);
   if (daily.length === 0) {
     console.log("No scheduled tasks for this hour.");
     return; // early return to exit the function

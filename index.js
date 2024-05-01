@@ -7,7 +7,7 @@ const setGroupModule = require("./src/sendQuiz/setGroup.js");
 const isDaily = require("./src/sendQuiz/isDaily.js");
 const checkAnswerModule = require("./src/sendQuiz/answerChecker.js");
 
-const token = "6830036566:AAFuwdwCmmfuUChYIND9JP3NzWcYB1b0qIw";
+const token = "BOT_TOKEN";
 
 const bot = new telegramBot(token, { polling: true });
 
