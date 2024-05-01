@@ -1,4 +1,4 @@
-const questionGroup = require("../DataBase/group.js");
+const questionGroup = require("../Question/group.js");
 const setGroup = (chat , _daily) => {
   console.log('setGroup run');
   const chatType = chat.type;

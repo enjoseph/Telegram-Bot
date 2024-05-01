@@ -1,4 +1,4 @@
-const group = require("../DataBase/group.js");
+const group = require("../Question/group.js");
 const sendQuiz = require("./sendQuiz.js");
 
 const Daily = (bot) => {
