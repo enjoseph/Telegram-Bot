@@ -32,7 +32,7 @@ bot.on("poll_answer", (poll) => {
   const user = poll.user;
   const pollID = poll.poll_id;
 
-  checkAnswerModule(bot, userOption, user, pollID);
+  //checkAnswerModule(bot, userOption, user, pollID);
 });
 
 bot.on("polling_error", (poll) => {
