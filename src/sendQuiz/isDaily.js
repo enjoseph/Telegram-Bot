@@ -1,11 +1,11 @@
-const group = require("../DataBase/group.js");
+const questionGroup = require("../DataBase/group.js");
 const sendQuiz = require("./sendQuiz.js");
 
 const Daily = (bot) => {
   console.log("Starting daily");
   const now = new Date();
   const hours = now.getHours();
-  const daily = group.filter((item) => item.daily == hours);
+  const daily = questionGroup.filter((item) => item.daily == hours);
   if (daily.length === 0) {
     console.log("No scheduled tasks for this hour.");
     return; // early return to exit the function
