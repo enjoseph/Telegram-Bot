@@ -39,14 +39,6 @@ bot.on("polling_error", (poll) => {
 
 cron.schedule("0 */1 * * *", () => isDaily(bot));
 
-const http = require("http");
 
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("elchinimanov bot");
-});
 
-const PORT = process.env.PORT || 3000;
-
-server.listen(PORT, () => console.log("Server is running on port 3000"));
 

@@ -1,9 +1,7 @@
 const questionsDB = require("../DataBase/questions.js");
 
-
 const sendQuiz = async (bot, chatID) => {
-
-  console.log("sendQuiz run" );
+  console.log("sendQuiz run");
 
   const currentQuestion = selectQuestion();
 
@@ -17,18 +15,17 @@ const sendQuiz = async (bot, chatID) => {
     \`\`\`
     `;
   try {
-    await bot.sendMessage(chatID, quiestionCode, { parse_mode: "Markdown"  });
+    await bot.sendMessage(chatID, quiestionCode, { parse_mode: "Markdown" });
     const _pollID = await bot.sendPoll(chatID, questionText, answerOptions, {
       is_anonymous: false,
-        type:'quiz',
-        correct_option_id: currentQuestion.correctAnswerIndex
+      type: "quiz",
+      correct_option_id: currentQuestion.correctAnswerIndex,
     });
     await updatePollID(currentQuestion, _pollID);
   } catch (error) {
     console.log("Error sending question to chat:", chatID, error);
   }
 };
-
 const selectQuestion = () => {
   for (let i = 0; i < questionsDB.length; i++) {
     if (!questionsDB[i].pollID) {
@@ -47,7 +44,8 @@ const selectCode = (codeID) => {
 };
 
 const updatePollID = (currentQustion, pollID) => {
-  if (currentQustion.pollID !== false) console.log("The question was presented once");
+  if (currentQustion.pollID !== false)
+    console.log("The question was presented once");
   currentQustion.pollID = pollID.poll.id;
 };
 
