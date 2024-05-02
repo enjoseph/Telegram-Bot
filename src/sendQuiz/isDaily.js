@@ -1,13 +1,13 @@
+const moment = require("moment-timezone");
+
 const questionGroup = require("../DataBase/group.js");
 const sendQuiz = require("./sendQuiz.js");
 
 const Daily = (bot) => {
   console.log(questionGroup);
   console.log("Starting daily");
-const userTimezoneOffset = (new Date()).getTimezoneOffset() / 60; // Saat cinsinden
-const now = new Date();
-const hours = new Date(now.getTime() + userTimezoneOffset * 60 * 60 * 1000);
-  console.log(hours);
+  const hours = moment.tz("Asia/Baku").format("H");
+
   const daily = questionGroup.filter((item) => item.daily == hours);
   console.log(daily);
   if (daily.length === 0) {
